@@ -1,0 +1,128 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-row>
+      <ion-col size-lg="12" class="ion-hide-md-down">
+        <ion-title style="text-align: center;">
+          welcome to A note taking app!!!
+        </ion-title>
+      </ion-col>
+
+      <ion-col size-sm="12" size-xs="12" class="ion-hide-md-up ion-show-md-down">
+        <ion-title style="text-align: center;">
+          note taking app!!!
+        </ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size-lg="4" size-md="5" size-sm="12" size-xs="12" class="ion-hide-sm-down">
+        <div id="container">
+          <ion-header [translucent]="true">
+            <ion-toolbar>
+              <ion-title style="text-align: center;">
+                Add notes
+              </ion-title>
+            </ion-toolbar>
+          </ion-header>
+
+        <form #form="ngForm" (ngSubmit)="logForm(form)">
+            <ion-item>
+              <ion-label>Title</ion-label>
+              <ion-input type="text" name="title" placeholder="title" [(ngModel)]="todo.title" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Description</ion-label>
+              <ion-textarea name="description" placeholder="description" [(ngModel)]="todo.description" required></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-button type="submit">Add Note</ion-button>
+            </ion-item>
+        </form>
+        </div>
+      </ion-col>
+
+      <ion-col size-sm="12" size-xs="12" class="ion-hide-sm-up ion-show-sm-down">
+        <div id="container" style="width: 95%;">
+          <ion-header [translucent]="true">
+            <ion-toolbar>
+              <ion-title style="text-align: center;">
+                Add notes
+              </ion-title>
+            </ion-toolbar>
+          </ion-header>
+
+        <form #form="ngForm" (ngSubmit)="logForm(form)">
+            <ion-item>
+              <ion-label>Title</ion-label>
+              <ion-input type="text" name="title" placeholder="title" [(ngModel)]="todo.title" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Description</ion-label>
+              <ion-textarea name="description" placeholder="description" [(ngModel)]="todo.description" required></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-button type="submit">Add Note</ion-button>
+            </ion-item>
+        </form>
+        </div>
+      </ion-col>
+
+      <ion-col size-lg="8" size-md="7" size-sm="12" size-xs="12" class="ion-hide-md-down" >
+        <ion-row>
+          <ion-col size="auto" *ngFor="let item of temp;index as i" >
+            <ion-card>
+              <ion-card-header>
+                  <div>
+                    <ion-row>
+                      <ion-col>
+                        <ion-card-title>{{item.title}}</ion-card-title>
+                      </ion-col>
+                      <ion-col style="display: contents;">
+                        <ion-button size="small" fill="clear" (click)="remove(i)">
+                          <ion-icon name="close-outline" style="color: black;"></ion-icon>
+                        </ion-button>
+                      </ion-col>
+                    </ion-row>
+                  </div>
+              </ion-card-header>
+              <ion-card-content style="height: 200px; overflow-y: auto;">
+                {{item.description}}
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col size-lg="9" size-sm="12" size-xs="12" style="margin: 210px 0px 0px 0px;" class="ion-hide-md-up ion-show-md-down">
+        <ion-row>
+          <ion-col size="auto" *ngFor="let item of temp; index as i" >
+            <ion-card>
+              <ion-card-header>
+                <div>
+                <ion-row>
+                  <ion-col>
+                    <ion-card-title>{{item.title}}</ion-card-title>
+                  </ion-col>
+                  <ion-col style="display: contents;">
+                    <ion-button size="small" fill="clear" (click)="remove(i)" >
+                      <ion-icon name="close-outline" style="color: black;"></ion-icon>
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </div>
+              </ion-card-header>
+              <ion-card-content style="height: 200px; overflow-y: auto;">
+                {{item.description}}
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
