@@ -16,6 +16,7 @@ export class HomePage implements OnInit{
   ngOnInit(): void {
     this.temp
   }
+
   async logForm(form : any) {
     if (form.valid) {
       var alert = await this.toastController.create({
@@ -61,4 +62,7 @@ export class HomePage implements OnInit{
     }, 500);
   }
 
+  check(index: any) {
+    return this.temp[index];
+  }
 }

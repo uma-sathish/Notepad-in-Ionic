@@ -89,12 +89,9 @@
                     </ion-row>
                   </div>
               </ion-card-header>
-              <ion-card-content *ngIf="check(i)" style="height:200px; overflow-y: auto;" >
+              <ion-card-content *ngIf="check(i)" style="min-height:50px;  max-height: 200px; overflow-y: auto;" >
                 {{item.description}}
               </ion-card-content>
-            <ion-card-content  *ngIf="!check(i)" style="height:auto; overflow-y: auto;" >
-              {{item.description}}
-            </ion-card-content>
             </ion-card>
           </ion-col>
         </ion-row>
@@ -118,12 +115,12 @@
                 </ion-row>
               </div>
               </ion-card-header>
-              <ion-card-content *ngIf="check(i)" style="height:200px; overflow-y: auto;" >
+              <ion-card-content *ngIf="check(i)" style="min-height:50px;  max-height: 200px; overflow-y: auto;" >
                 {{item.description}}
               </ion-card-content>
-            <ion-card-content  *ngIf="!check(i)" style="height:auto; overflow-y: auto;" >
+            <!-- <ion-card-content  *ngIf="!check(i)" style="height:auto; overflow-y: auto;" >
               {{item.description}}
-            </ion-card-content>
+            </ion-card-content> -->
             </ion-card>
           </ion-col>
         </ion-row>
